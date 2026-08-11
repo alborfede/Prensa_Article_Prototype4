@@ -164,7 +164,7 @@
    .sticky-logo-web {
      position: absolute !important;
      left: 40px !important;
-     top: 55% !important;
+     top: 56% !important;
      transform: translateY(-50%) !important;
      display: flex !important;
      align-items: center !important;
@@ -362,7 +362,7 @@
    .main-layout {
      width: 100%;
      max-width: 100%;
-     margin: 20px auto 40px auto;
+     margin: 5px auto 40px auto; /* Espacio entre body y header,cambiado de 20px a 5px arriba */
      padding: 0 40px;
      display: grid !important;
      grid-template-columns: 1fr minmax(auto, 700px) 1fr;
@@ -2105,7 +2105,7 @@
        display: flex !important;
        flex-direction: column !important;
        padding: 0 16px !important;
-       margin-top: 15px !important;
+       margin-top: 5px !important; /* Cambiado de 15px a 5px */
      }
    
      .article-container {
