@@ -4,34 +4,42 @@ export const AudioPlayerButton: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'playing' | 'paused'>('idle');
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [totalDuration, setTotalDuration] = useState(190);
+  const [totalDuration, setTotalDuration] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(
-      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
-    );
+    // 1. Apuntamos al archivo local ubicado en /public/audio_parte1_articulo.mp3
+    audioRef.current = new Audio('/audio_parte1_articulo.mp3');
     const audio = audioRef.current;
 
-    audio.addEventListener('loadedmetadata', () => {
-      if (!isNaN(audio.duration)) {
+    const handleLoadedMetadata = () => {
+      if (!isNaN(audio.duration) && isFinite(audio.duration)) {
         setTotalDuration(audio.duration);
       }
-    });
+    };
 
-    audio.addEventListener('timeupdate', () => {
+    const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
-      setProgress((audio.currentTime / audio.duration) * 100);
-    });
+      if (audio.duration) {
+        setProgress((audio.currentTime / audio.duration) * 100);
+      }
+    };
 
-    audio.addEventListener('ended', () => {
+    const handleEnded = () => {
       setStatus('idle');
       setCurrentTime(0);
       setProgress(0);
-    });
+    };
+
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
+    audio.addEventListener('ended', handleEnded);
 
     return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
+      audio.removeEventListener('ended', handleEnded);
       audio.pause();
       audio.src = '';
     };
@@ -42,7 +50,7 @@ export const AudioPlayerButton: React.FC = () => {
     if (!audio) return;
 
     if (status === 'playing') {
-      audio.play().catch((err) => console.error('Error al reproducir:', err));
+      audio.play().catch((err) => console.error('Error al reproducir audio local:', err));
     } else if (status === 'paused') {
       audio.pause();
     } else if (status === 'idle') {
@@ -52,6 +60,7 @@ export const AudioPlayerButton: React.FC = () => {
   }, [status]);
 
   const formatTime = (seconds: number) => {
+    if (isNaN(seconds) || !isFinite(seconds)) return '00:00';
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins.toString().padStart(2, '0')}:${secs
