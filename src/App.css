@@ -788,8 +788,23 @@
    }
    
    /* ==========================================
-      ESTILOS REPRODUCTOR DE AUDIO
-      ========================================== */
+   ESTILOS REPRODUCTOR DE AUDIO
+   ========================================== */
+
+/* Oculta la palabra "Escuchando" tanto en Web como Mobile */
+.audio-info-group > span:not(.audio-time-badge) {
+  display: none !important;
+}
+
+/* Oculta el texto dentro del botón cuando está pausado pero conserva los paréntesis y el contador */
+.audio-paused-container .summarize-btn > span {
+  font-size: 0 !important;
+}
+
+.audio-paused-container .summarize-btn > span::before {
+  content: attr(data-time); /* En caso de requerir el tiempo simple */
+  font-size: 14px !important;
+}
    .audio-wrapper {
      display: inline-flex;
      align-items: center;

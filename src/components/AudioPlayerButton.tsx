@@ -106,7 +106,7 @@ export const AudioPlayerButton: React.FC = () => {
               strokeLinecap="round"
             />
           </svg>
-          <span>Escuchar nota</span>
+          <span>Escuchar</span>
         </button>
       )}
 
@@ -152,7 +152,7 @@ export const AudioPlayerButton: React.FC = () => {
                 />
               </svg>
 
-              <span>Escuchando...</span>
+              <span>Escuchando</span>
               <span className="audio-time-badge">
                 {formatTime(currentTime)} / {formatTime(totalDuration)}
               </span>
