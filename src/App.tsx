@@ -131,13 +131,16 @@ export function App() {
           </p>
 
           <div className="above-cover-bar">
-            <div className="author-info-group">
-              <img
-                className="author-avatar-img"
-                src="https://admin.prensaobrera.com/wp-content/uploads/pablo-giachello-e1622484713254.jpg"
-                alt="Pablo Giachello"
-              />
-              <span className="author-name">Pablo Giachello</span>
+            {/* BLOQUE IZQUIERDO: AVATAR, NOMBRE Y ACCIONES DE COMPARTIR */}
+            <div className="author-actions-group">
+              <div className="author-info-group">
+                <img
+                  className="author-avatar-img"
+                  src="https://admin.prensaobrera.com/wp-content/uploads/pablo-giachello-e1622484713254.jpg"
+                  alt="Pablo Giachello"
+                />
+                <span className="author-name">Pablo Giachello</span>
+              </div>
 
               <div className="share-actions-wrapper">
                 <ShareMenu />
@@ -156,9 +159,66 @@ export function App() {
                 >
                   <i className="ri-whatsapp-line"></i>
                 </a>
+
+                {/* BOTÓN RECTANGULAR EN WEB */}
+                <a
+                  href="https://news.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="google-news-btn-inline desktop-only-btn"
+                >
+                  <span>Agregar Prensa Obrera en</span>
+                  <svg className="google-icon-svg" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                    />
+                  </svg>
+                </a>
+
+                {/* BOTÓN CIRCULAR EN MOBILE */}
+                <a
+                  href="https://news.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="google-news-btn-inline mobile-only-btn"
+                  title="Seguir en Google News"
+                >
+                  <svg className="google-icon-svg" viewBox="0 0 24 24">
+                    <path
+                      fill="#4285F4"
+                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
 
+            {/* BLOQUE DERECHO: REPRODUCTOR DE AUDIO */}
             <AudioPlayerButton />
           </div>
 
@@ -179,6 +239,8 @@ export function App() {
             <ArticleSummary />
           </div>
 
+          {/* 
+          SECCIÓN OCULTA: BOTÓN SEGUIR EN GOOGLE NEWS
           <div className="nyt-google-section">
             <p className="nyt-google-title">
               Mirá más de nuestra cobertura en tus resultados de búsqueda.
@@ -191,7 +253,8 @@ export function App() {
             >
               Seguir a Prensa Obrera en Google &#8599;
             </a>
-          </div>
+          </div> 
+          */}
 
           {/* CUERPO DEL ARTÍCULO (PUNTO DE ANCLAJE DE LA SIDEBAR) */}
           <div className="article-body">
@@ -329,6 +392,87 @@ export function App() {
               la actividad combativa de las masas.
             </p>
 
+            <h2>La ley antinacional y los trabajadores</h2>
+            <p>
+              Como frutilla del postre de toda esta política de subordinación al
+              imperialismo y transformación de la Argentina en una colonia, el
+              gobierno pretende avanzar en la aprobación de la ley de
+              “inviolabilidad de la propiedad privada” el próximo 6 de agosto.
+              Como se recordará, el despliegue de los jugadores de la selección
+              de una bandera con la leyenda “Las Malvinas son argentinas” en el
+              partido contra Inglaterra forzó la postergación del tratamiento de
+              la ley. Los senadores optaron por evitar el papelón de entregar el
+              país el día después de que el pueblo argentino festejara
+              cerradamente un acto de reivindicación nacional.
+            </p>
+
+            <div className="instagram-embed-wrapper">
+              <blockquote
+                className="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/p/DbL6fLrlGGP/?utm_source=ig_embed&ig_rid=AOWytg8Rr-nXqcV9fP64nCl"
+                data-instgrm-version="14"
+                style={{
+                  background: '#fff',
+                  border: 0,
+                  borderRadius: '3px',
+                  boxShadow:
+                    '0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15)',
+                  margin: '1px auto',
+                  maxWidth: '540px',
+                  minWidth: '326px',
+                  padding: 0,
+                  width: '99.375%',
+                }}
+              ></blockquote>
+            </div>
+
+            <div className="author-bio-card">
+              <img
+                className="author-bio-avatar"
+                src="https://admin.prensaobrera.com/wp-content/uploads/pablo-giachello-e1622484713254.jpg"
+                alt="Pablo Giachello"
+              />
+              <div className="author-bio-content">
+                <p className="author-bio-text">
+                  <strong>Pablo Giachello</strong> es Legislador electo por la
+                  Provincia de Buenos Aires y Dirigente Nacional del PO - FITU.
+                </p>
+                <a href="#" className="author-bio-link">
+                  Ver sus notas
+                </a>
+              </div>
+            </div>
+
+            {/* NOTAS FINALES DEL ARTÍCULO */}
+            <div className="related-notes-section">
+              <a href="#" className="related-card">
+                <img
+                  src="https://prensaobrera.com/_next/image?url=https%3A%2F%2Fadmin.prensaobrera.com%2Fwp-content%2Fuploads%2Fruenion-660x318.jpg&w=1920&q=75"
+                  alt="Georgieva, Milei y el FMI"
+                  className="related-card-img"
+                />
+                <div className="related-card-info">
+                  <h4>Georgieva, Milei y el FMI</h4>
+                  <p>Editorial de 14 Toneladas T3E23.</p>
+                  <span>prensaobrera.com</span>
+                </div>
+              </a>
+
+              <a href="#" className="related-card">
+                <img
+                  src="https://prensaobrera.com/_next/image?url=https%3A%2F%2Fadmin.prensaobrera.com%2Fwp-content%2Fuploads%2Fkristalina-georgieva-luis-caputo-571x321.webp&w=1200&q=75"
+                  alt="La Argentina colonia"
+                  className="related-card-img"
+                />
+                <div className="related-card-info">
+                  <h4>La Argentina colonia y el ajuste</h4>
+                  <p>Debates y perspectivas de la clase obrera.</p>
+                  <span>prensaobrera.com</span>
+                </div>
+              </a>
+            </div>
+
+            {/* SECCIÓN "MÁS PARA LEER" MOVIDA AQUÍ: DEBAJO DE LAS NOTAS FINALES Y ANTES DEL FOOTER */}
             <div className="nyt-free-reads-box">
               <div className="nyt-free-reads-header">Más para leer</div>
               <div className="nyt-grid-2x2">
@@ -399,85 +543,6 @@ export function App() {
                   />
                 </a>
               </div>
-            </div>
-
-            <h2>La ley antinacional y los trabajadores</h2>
-            <p>
-              Como frutilla del postre de toda esta política de subordinación al
-              imperialismo y transformación de la Argentina en una colonia, el
-              gobierno pretende avanzar en la aprobación de la ley de
-              “inviolabilidad de la propiedad privada” el próximo 6 de agosto.
-              Como se recordará, el despliegue de los jugadores de la selección
-              de una bandera con la leyenda “Las Malvinas son argentinas” en el
-              partido contra Inglaterra forzó la postergación del tratamiento de
-              la ley. Los senadores optaron por evitar el papelón de entregar el
-              país el día después de que el pueblo argentino festejara
-              cerradamente un acto de reivindicación nacional.
-            </p>
-
-            <div className="instagram-embed-wrapper">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DbL6fLrlGGP/?utm_source=ig_embed&ig_rid=AOWytg8Rr-nXqcV9fP64nCl"
-                data-instgrm-version="14"
-                style={{
-                  background: '#fff',
-                  border: 0,
-                  borderRadius: '3px',
-                  boxShadow:
-                    '0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15)',
-                  margin: '1px auto',
-                  maxWidth: '540px',
-                  minWidth: '326px',
-                  padding: 0,
-                  width: '99.375%',
-                }}
-              ></blockquote>
-            </div>
-
-            <div className="author-bio-card">
-              <img
-                className="author-bio-avatar"
-                src="https://admin.prensaobrera.com/wp-content/uploads/pablo-giachello-e1622484713254.jpg"
-                alt="Pablo Giachello"
-              />
-              <div className="author-bio-content">
-                <p className="author-bio-text">
-                  <strong>Pablo Giachello</strong> es Legislador electo por la
-                  Provincia de Buenos Aires y Dirigente Nacional del PO - FITU.
-                </p>
-                <a href="#" className="author-bio-link">
-                  Ver sus notas
-                </a>
-              </div>
-            </div>
-
-            <div className="related-notes-section">
-              <a href="#" className="related-card">
-                <img
-                  src="https://prensaobrera.com/_next/image?url=https%3A%2F%2Fadmin.prensaobrera.com%2Fwp-content%2Fuploads%2Fruenion-660x318.jpg&w=1920&q=75"
-                  alt="Georgieva, Milei y el FMI"
-                  className="related-card-img"
-                />
-                <div className="related-card-info">
-                  <h4>Georgieva, Milei y el FMI</h4>
-                  <p>Editorial de 14 Toneladas T3E23.</p>
-                  <span>prensaobrera.com</span>
-                </div>
-              </a>
-
-              <a href="#" className="related-card">
-                <img
-                  src="https://prensaobrera.com/_next/image?url=https%3A%2F%2Fadmin.prensaobrera.com%2Fwp-content%2Fuploads%2Fkristalina-georgieva-luis-caputo-571x321.webp&w=1200&q=75"
-                  alt="La Argentina colonia"
-                  className="related-card-img"
-                />
-                <div className="related-card-info">
-                  <h4>La Argentina colonia y el ajuste</h4>
-                  <p>Debates y perspectivas de la clase obrera.</p>
-                  <span>prensaobrera.com</span>
-                </div>
-              </a>
             </div>
           </div>
         </article>
