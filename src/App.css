@@ -2306,14 +2306,14 @@
    
      .nyt-share-dropdown {
        left: auto !important;
-       right: -40px !important;
+       right: -70px !important; /* Mantiene la caja desplegable bien centrada en la pantalla */
        transform: none !important;
        animation: nytFadeInMobile 0.15s ease-out !important;
      }
    
      .nyt-share-arrow {
        left: auto !important;
-       right: 50px !important;
+       right: 77px !important; /* Desplaza la flecha a la izquierda para alinearse con el icono de compartir */
        transform: rotate(45deg) !important;
      }
    
