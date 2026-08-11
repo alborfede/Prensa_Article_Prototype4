@@ -375,7 +375,7 @@ export const Header: React.FC = () => {
             <div className="drawer-scrollable-body">
               <div className="drawer-section-group">
                 <a href="#" className="drawer-item with-arrow">
-                  <span>Marcha del 6 de agosto</span>
+                  <span>HOME</span>
                   <i className="ri-arrow-right-s-line"></i>
                 </a>
                 <a href="#" className="drawer-item with-arrow">
