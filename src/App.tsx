@@ -119,7 +119,7 @@ export function App() {
             <div className="date-reading-group">
               <span className="article-date">30/7/2026</span>
               <span className="reading-time-badge">
-                <i className="ri-time-line"></i> 4 min lect.
+                <i className="ri-time-line"></i> 7 min lect.
               </span>
             </div>
           </div>

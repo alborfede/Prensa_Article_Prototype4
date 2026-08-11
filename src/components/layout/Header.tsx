@@ -329,8 +329,8 @@ export const Header: React.FC = () => {
 
     <ul className="sub-nav-links">
       <li className="highlight-topic">
-        <span className="live-tag">● EN VIVO</span>
-        <a href="#">Marcha del 6 de agosto</a>
+        <span className="live-tag">● ESPECIAL</span>
+        <a href="#">Encuentro de Mujeres</a>
       </li>
       <span className="sub-nav-divider">|</span>
       <li><a href="#">Últimas</a></li>

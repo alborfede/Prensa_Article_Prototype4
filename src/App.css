@@ -2132,21 +2132,6 @@
    }
    
    @media (max-width: 768px) {
-    /* Oculta el texto "Escuchando..." en mobile */
-    .audio-info-group > span:not(.audio-time-badge) {
-      display: none !important;
-    }
-  
-    /* Oculta el texto "Continuar" manteniendo visible el tiempo en paréntesis
-    .audio-paused-container .summarize-btn > span {
-      font-size: 0 !important;
-    }*/
-  
-    .audio-paused-container .summarize-btn > span::before {
-      content: '' !important;
-    }
-  
-
      .search-container-inline {
        display: none !important;
      }
@@ -2210,7 +2195,10 @@
      .article-bajada {
        font-size: 15px !important;
      }
-   
+
+     /* ==========================================
+        REORDENAMIENTO HORIZONTAL EN MOBILE
+        ========================================== */
      .above-cover-bar {
        flex-direction: column !important;
        align-items: flex-start !important;
@@ -2219,7 +2207,17 @@
    
      .author-actions-group {
        width: 100% !important;
+       display: flex !important;
+       align-items: center !important;
        justify-content: space-between !important;
+       gap: 8px !important;
+     }
+
+     .share-actions-wrapper {
+       display: flex !important;
+       align-items: center !important;
+       gap: 6px !important;
+       margin-left: auto !important;
      }
    
      .desktop-only-btn {
@@ -2250,7 +2248,7 @@
        white-space: nowrap;
      }
    
-     /* BOTÓN DE AUDIO MOBILE: Se ajusta al tamaño del texto y no al 100% */
+     /* BOTÓN DE AUDIO MOBILE */
      .audio-wrapper {
        width: auto !important;
        max-width: 100% !important;
@@ -2259,6 +2257,15 @@
      .audio-wrapper .summarize-btn {
        width: auto !important;
        display: inline-flex !important;
+     }
+
+     /* OCULTAR TEXTOS DE AUDIO SOLO EN MOBILE */
+     .audio-info-group > span:not(.audio-time-badge) {
+       display: none !important;
+     }
+
+     .audio-paused-container .summarize-btn > span {
+       display: none !important;
      }
    
      .nyt-grid-2x2 {
@@ -2323,14 +2330,14 @@
    
      .nyt-share-dropdown {
        left: auto !important;
-       right: -70px !important; /* Mantiene la caja desplegable bien centrada en la pantalla */
+       right: -70px !important;
        transform: none !important;
        animation: nytFadeInMobile 0.15s ease-out !important;
      }
    
      .nyt-share-arrow {
        left: auto !important;
-       right: 77px !important; /* Desplaza la flecha a la izquierda para alinearse con el icono de compartir */
+       right: 77px !important;
        transform: rotate(45deg) !important;
      }
    
