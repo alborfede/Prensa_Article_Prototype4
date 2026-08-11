@@ -122,7 +122,7 @@
    }
    
    /* ==========================================
-      SUB-NAVBAR Y STICKY
+      SUB-NAVBAR Y STICKY (SÓLO WEB / CENTRADO PERFECTO)
       ========================================== */
    .sub-navbar {
      border-bottom: 1px solid var(--border-color) !important;
@@ -142,13 +142,41 @@
    
    .sub-navbar.is-sticky {
      position: fixed !important;
-     top: 5px !important;
+     top: 0 !important;
      left: 0 !important;
      right: 0 !important;
+     height: 38px !important;
      z-index: 99999 !important;
      background-color: #ffffff !important;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
      animation: slideDown 0.2s ease-out;
+   }
+
+   .sub-navbar.is-sticky .sub-nav-container {
+     position: relative !important;
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     width: 100% !important;
+     padding: 0 20px !important;
+   }
+
+   /* Logo posicionado con leve desplazamiento hacia abajo y tamaño reducido */
+   .sticky-logo-web {
+     position: absolute !important;
+     left: 40px !important;
+     top: 56% !important;
+     transform: translateY(-50%) !important;
+     display: flex !important;
+     align-items: center !important;
+     text-decoration: none !important;
+     animation: fadeIn 0.2s ease-out;
+   }
+
+   .sticky-logo-web svg {
+     width: 112px !important;
+     height: auto !important;
+     display: block !important;
    }
    
    .sub-nav-links {
@@ -320,16 +348,17 @@
    }
    
    /* Ocultar el buscador dentro del drawer en versión web por defecto */
-.drawer-search-wrapper {
-  display: none !important;
-}
+   .drawer-search-wrapper {
+     display: none !important;
+   }
 
-/* Mostrarlo únicamente en dispositivos móviles */
-@media (max-width: 768px) {
-  .drawer-search-wrapper {
-    display: block !important;
-  }
-}
+   /* Mostrarlo únicamente en dispositivos móviles */
+   @media (max-width: 768px) {
+     .drawer-search-wrapper {
+       display: block !important;
+     }
+   }
+
    /* ==========================================
       LAYOUT PRINCIPAL Y SIDEBAR STICKY
       ========================================== */
@@ -1012,7 +1041,7 @@
    
    /* RESTO DE CONTENIDO Y SIDEBARS */
    .nyt-google-section {
-     display: none !important; /* OCULTO SEGÚN INSTRUCCIÓN ANTERIOR */
+     display: none !important;
      background-color: #f7f7f7;
      border-radius: 4px;
      padding: 24px 20px;
@@ -2106,6 +2135,10 @@
    }
    
    @media (max-width: 768px) {
+     .sticky-logo-web {
+       display: none !important;
+     }
+
      .search-container-inline {
        display: none !important;
      }
@@ -2324,7 +2357,7 @@
      }
 
      /* ==========================================
-        ESTRUSTURA DRAWER LATERAL Y BÚSQUEDA MOBILE
+        ESTRUCTURA DRAWER LATERAL Y BÚSQUEDA MOBILE
         ========================================== */
      .drawer-overlay {
        position: fixed !important;
@@ -2405,7 +2438,7 @@
      .drawer-search-btn {
        width: 44px !important;
        height: 36px !important;
-       background-color: #b0c4de !important; /* Tono azul grisáceo estilo NYT */
+       background-color: #b0c4de !important;
        color: #ffffff !important;
        border: none !important;
        border-radius: 2px !important;
@@ -2440,43 +2473,4 @@
        font-weight: 700 !important;
        border-bottom: 1px solid #f2f2f2 !important;
      }
-     /* ==========================================
-   LOGO EN SUB-NAVBAR STICKY (SÓLO WEB)
-   ========================================== */
-
-/* Ajustar el contenedor cuando está sticky en web */
-.sub-navbar.is-sticky .sub-nav-container {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 0 40px !important;
-  position: relative !important;
-}
-
-/* Alineación del logo sticky a la izquierda */
-.sticky-logo-web {
-  display: flex !important;
-  align-items: center !important;
-  flex-shrink: 0 !important;
-  margin-right: 20px !important;
-  animation: fadeIn 0.2s ease-out;
-}
-
-.sticky-logo-web svg {
-  height: 18px !important;
-  width: auto !important;
-  display: block !important;
-}
-
-/* Mantener el menú centrado en la barra sticky web */
-.sub-navbar.is-sticky .sub-nav-links {
-  margin: 0 auto !important;
-}
-
-/* Garantizar que NO aparezca en versión mobile */
-@media (max-width: 768px) {
-  .sticky-logo-web {
-    display: none !important;
-  }
-}
    }
