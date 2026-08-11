@@ -167,7 +167,7 @@ export function App() {
                   rel="noopener noreferrer"
                   className="google-news-btn-inline desktop-only-btn"
                 >
-                  <span>Agregar Prensa Obrera en</span>
+                  <span>Agregar en</span>
                   <svg className="google-icon-svg" viewBox="0 0 24 24">
                     <path
                       fill="#4285F4"
