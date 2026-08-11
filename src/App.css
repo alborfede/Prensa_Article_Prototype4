@@ -2132,9 +2132,20 @@
    }
    
    @media (max-width: 768px) {
-     .sticky-logo-web {
-       display: none !important;
-     }
+    /* Oculta el texto "Escuchando..." en mobile */
+    .audio-info-group > span:not(.audio-time-badge) {
+      display: none !important;
+    }
+  
+    /* Oculta el texto "Continuar" manteniendo visible el tiempo en paréntesis
+    .audio-paused-container .summarize-btn > span {
+      font-size: 0 !important;
+    }*/
+  
+    .audio-paused-container .summarize-btn > span::before {
+      content: '' !important;
+    }
+  
 
      .search-container-inline {
        display: none !important;
@@ -2239,9 +2250,15 @@
        white-space: nowrap;
      }
    
-     .audio-wrapper,
-     .summarize-btn {
-       width: 100% !important;
+     /* BOTÓN DE AUDIO MOBILE: Se ajusta al tamaño del texto y no al 100% */
+     .audio-wrapper {
+       width: auto !important;
+       max-width: 100% !important;
+     }
+
+     .audio-wrapper .summarize-btn {
+       width: auto !important;
+       display: inline-flex !important;
      }
    
      .nyt-grid-2x2 {
