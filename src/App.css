@@ -161,11 +161,10 @@
      padding: 0 20px !important;
    }
 
-   /* Logo posicionado con leve desplazamiento hacia abajo y tamaño reducido */
    .sticky-logo-web {
      position: absolute !important;
      left: 40px !important;
-     top: 56% !important;
+     top: 55% !important;
      transform: translateY(-50%) !important;
      display: flex !important;
      align-items: center !important;
@@ -347,12 +346,10 @@
      background-color: #a8bcd0;
    }
    
-   /* Ocultar el buscador dentro del drawer en versión web por defecto */
    .drawer-search-wrapper {
      display: none !important;
    }
 
-   /* Mostrarlo únicamente en dispositivos móviles */
    @media (max-width: 768px) {
      .drawer-search-wrapper {
        display: block !important;
@@ -2218,15 +2215,28 @@
        display: none !important;
      }
    
+     /* BOTÓN GOOGLE NEWS MOBILE CON TEXTO "Agregar en" */
      .google-news-btn-inline.mobile-only-btn {
        display: inline-flex !important;
-       width: 30px !important;
-       height: 30px !important;
-       padding: 0 !important;
-       border-radius: 50% !important;
-       justify-content: center !important;
        align-items: center !important;
+       gap: 5px !important;
+       width: auto !important;
+       height: 30px !important;
+       padding: 0 10px !important;
+       border-radius: 4px !important;
        border: 1px solid #e0e0e0 !important;
+       font-size: 11px !important;
+       font-weight: 500 !important;
+       color: #333333 !important;
+       text-decoration: none !important;
+       background-color: #ffffff !important;
+       justify-content: center !important;
+       box-sizing: border-box !important;
+     }
+
+     .google-news-btn-inline.mobile-only-btn::before {
+       content: "Agregar en";
+       white-space: nowrap;
      }
    
      .audio-wrapper,
