@@ -2211,6 +2211,11 @@
        font-size: 15px !important;
      }
 
+     /* Ocultar logo sticky únicamente en pantallas móviles */
+  .sticky-logo-web {
+    display: none !important;
+  }
+
      /* ==========================================
         REORDENAMIENTO HORIZONTAL EN MOBILE
         ========================================== */
