@@ -104,17 +104,17 @@ export function App() {
 
       <main className="main-layout">
         <article className="article-container">
-          {/* ETIQUETA EDITORIAL */}
+          {/* ETIQUETA CATEGORIA Y VOLANTA */}
           <div className="editorial-reference-container">
             <div className="editorial-badge-nyt">
-              <span className="editorial-badge-text">Editorial</span>
+              <span className="editorial-badge-text">Políticas</span>
               <div className="editorial-badge-underline"></div>
             </div>
           </div>
 
           <div className="article-meta-header">
             <a href="#" className="category-tag">
-              Políticas
+              Editorial
             </a>
             <div className="date-reading-group">
               <span className="article-date">30/7/2026</span>
